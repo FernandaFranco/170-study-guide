@@ -21,11 +21,11 @@ Status:
 
 # Components of a URL:
 
-# Contruct a URL with a few params and values
+# Construct a URL with a few params and values
 
 # Difference between GET and POST
 - GET is the default method of many links;
-- The response to a GET request can be any kind of resource (image,video, html), but if it's HTML and it references other resources, the browser will request those automatically;
+- The response to a GET request can be any kind of resource (image,video, HTML), but if it's HTML and it references other resources, the browser will request those automatically;
 
 ## When to use GET:
 - When retrieving a resource;
