@@ -47,15 +47,19 @@ Name-value pairs sent in plain text. Allows the server to send additional meta-i
 Contains raw response data (HTML, photo etc)
 
 
+# Construct a URL with a few params and values
+
+"http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader"
 
 # Components of a URL:
 
 #### Scheme
+
+*http*. Tells the web client how to access the resource.
 #### Host
 #### Port
 #### Path
-
-# Construct a URL with a few params and values
+#### Query String
 
 # Difference between GET and POST
 - GET is the default method of many links;
