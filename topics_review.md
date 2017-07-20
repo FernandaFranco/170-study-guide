@@ -27,10 +27,20 @@ Status:
 - GET is the default method of many links;
 - The response to a GET request can be any kind of resource (image,video, HTML), but if it's HTML and it references other resources, the browser will request those automatically;
 
-## When to use GET:
+### When to use GET:
 - When retrieving a resource;
+- query strings (exposed in the URL, string size limitation);
+- Transmit data through the URL;
 
-## When to use POST:
+### When to use POST:
+- Send and submit data to the server;
+- Initiate some action on the server;
+- Submitting a form;
+- Sending larger and sensitive data to the server (images/videos);
+- Transmit data through the HTTP body;
+- Redirects to the page specified in the field Location in the response header;
+
+
 
 # Difference between client-side and server-side code?
 
