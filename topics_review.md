@@ -49,17 +49,29 @@ Contains raw response data (HTML, photo etc)
 
 # Construct a URL with a few params and values
 
-"http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader"
+http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader
 
 # Components of a URL:
 
 #### Scheme
 
-*http*. Tells the web client how to access the resource.
+*http*. Tells the web client to access the resource by making a HTTP request. Other options are git, mailto or ftp.
+
 #### Host
+
+*www.bookstore.com*. Tells the client where the resource is hosted.
+
 #### Port
+
+*:69* Required if wanting to use a port other than the default.
+
 #### Path
+
+*/nonfiction/biographies/search*. Tells what local resource is being requested. If resource is "/" the path is optional.
+
 #### Query String
+
+*?author=Darth%20Vader*. String made up of query parameters. Used to send data to the server.
 
 # Difference between GET and POST
 - GET is the default method of many links;
