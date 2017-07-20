@@ -14,10 +14,21 @@ The server sends an response back to the client also in the form of strings of t
 
 # Components of a HTTP request?
 
-Method: tells the server what action to perform on a resource. GET/POST etc
+#### Headers
+
+Name-value pairs sent in plain text. Allows the client to send additional info about the client itself and the resource to be fetched. Some useful headers are Host, Accept-Language, User-Agent and Connection;
+
+#### Method
+
+Tells the server what action to perform on a resource. GET/POST etc;
 
 # Components of a HTTP response?
-Status:
+
+#### Headers
+
+Name-value pairs sent in plain text. Allows the server to send additional info with response;
+
+#### Status
 
 # Components of a URL:
 
