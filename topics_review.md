@@ -16,7 +16,11 @@ The server sends an response back to the client also in the form of strings of t
 
 #### Method
 
+Tells the server what action to perform on a resource. GET and POST are the most common method types. Keep reading for the differences between them.
+
 #### Path
+
+Name of the resource requested. May contain query strings if a GET request.
 
 #### Headers
 
@@ -24,27 +28,43 @@ Name-value pairs sent in plain text. Allows the client to send additional info a
 
 #### Message body (for POST requests)
 
-Tells the server what action to perform on a resource. GET/POST etc;
+
 
 # Components of a HTTP response?
 
-#### Headers
-
-Name-value pairs sent in plain text. Allows the server to send additional info with response;
-
 #### Status
 
+Three-digit number the server sends back after receiving a request. Most request gets a response, even if it's an error. The status will reflect if the server handled an request successfully or encountered an error.
+
+Some examples are: 200 OK, 302 Redirect, 404 Not Found, 500 Internal Server Error
+
+#### Headers
+
+Name-value pairs sent in plain text. Allows the server to send additional meta-information with response; Some of them are Content-Encoding, Server, Location, Content-Type.
+
+#### Message Body
+
+Contains raw response data (HTML, photo etc)
+
+
+
 # Components of a URL:
+
+#### Scheme
+#### Host
+#### Port
+#### Path
 
 # Construct a URL with a few params and values
 
 # Difference between GET and POST
 - GET is the default method of many links;
+- GET is what's used when typing an address in the browser bar;
 - The response to a GET request can be any kind of resource (image,video, HTML), but if it's HTML and it references other resources, the browser will request those automatically;
 
 ### When to use GET:
-- When retrieving a resource;
-- query strings (exposed in the URL, string size limitation);
+- Retrieving a resource;
+- Sending query strings (exposed in the URL, string size limitation);
 - Transmit data through the URL;
 
 ### When to use POST:
