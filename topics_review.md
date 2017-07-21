@@ -1,16 +1,16 @@
 # What HTTP is
 
-HTTP is a set of rules, or protocol, that regulates the relationship between applications and the transfer of hypertext documents. It's an agreement of how machines communicate with each other. Requests and responses follow a standard format that machines can understand. HTTP is also considered stateless, since each pair of request/responses are independent from the previous one. Thus, the server doesn't need to keep track of information between requests and there's no cleanup needed if a request breaks en route.
+HTTP is a set of rules, or protocol, that regulates the relationship between applications and the transfer of documents. It's an agreement of how machines communicate with each other. It's a text-based protocol that is the foundation of the web. Requests and responses follow a standard format that machines can understand. HTTP is also considered stateless, since each pair of request/responses are independent from the previous one. Thus, the server doesn't need to keep track of information between requests and there's no cleanup needed if a request breaks en route.
 
 # The role of a HTTP request is
 
-The client issues a request with information in the form of text to the server. The server can take apart the request and understand what it's asking for because of the agreement in the form of HTTP.
+The client issues a request with information in the form of text to the server. The server can take apart the request and understand what it's asking for because of the agreement in the form of HTTP. Must include a method and a path. May include parameters, headers or body.
 
-The server that hosts the website handles the request and issues a response back to the client( browser).
+The server that hosts the website handles the request and issues a response back to the client (browser).
 
 # In the other hand, the role of a HTTP response is
 
-The server sends an response back to the client also in the form of strings of text. The role of the browser is to process the response into human friendly content. The browser displays a parsed and processed version of the response.
+The server sends an response back to the client also in the form of strings of text. The role of the browser is to process the response into human friendly content. The browser displays a parsed and processed version of the response. Must include a status. May include headers or body.
 
 # Components of a HTTP request?
 
@@ -22,38 +22,41 @@ Tells the server what action to perform on a resource. GET and POST are the most
 
 Name of the resource requested. May contain query strings if a GET request.
 
-#### Headers
+#### Parameters - *OPTIONAL*
 
-Name-value pairs sent in plain text. Allows the client to send additional info about the client itself and the resource to be fetched. Some useful headers are Host, Accept-Language, User-Agent and Connection;
 
-#### Message body (for POST requests)
+#### Headers - *OPTIONAL*
+
+Name-value pairs sent in plain text. Allows the client to send additional info about the client itself and the resource to be fetched. Some useful headers are Host (required in HTTP 1.1, and typically set by the browser automatically), Accept-Language, User-Agent and Connection;
+
+#### Message body (for POST requests) - *OPTIONAL*
 
 
 
 # Components of a HTTP response?
 
-#### Status
+#### Status - *REQUIRED*
 
-Three-digit number the server sends back after receiving a request. Most request gets a response, even if it's an error. The status will reflect if the server handled an request successfully or encountered an error.
+Three-digit number and short string of text the server sends back after receiving a request. Most request gets a response, even if it's an error. The status will reflect if the server handled an request successfully or encountered an error.
 
 Some examples are: 200 OK, 302 Redirect, 404 Not Found, 500 Internal Server Error
 
-#### Headers
+#### Headers - *OPTIONAL*
 
-Name-value pairs sent in plain text. Allows the server to send additional meta-information with response; Some of them are Content-Encoding, Server, Location, Content-Type.
+Name-value pairs sent in plain text. Allows the server to send additional meta-information with response; Some of them are Content-Encoding, Server, Location, Content-Type (required most of the time).
 
-#### Message Body
+#### Message Body - *OPTIONAL*
 
-Contains raw response data (HTML, photo etc)
+Contains raw response data (HTML, photo etc) the client should render.
 
 
 # Construct a URL with a few params and values
 
-http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader&keyword=Empire
+http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader&keyword=fatherhood
 
 # Components of a URL:
 
-#### Scheme
+#### Scheme (or Protocol)
 
 *http*. Tells the web client to access the resource by making a HTTP request. Other options are git, mailto or ftp.
 
@@ -69,9 +72,9 @@ http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader&k
 
 */nonfiction/biographies/search*. Tells what local resource is being requested. If resource is "/" the path is optional.
 
-#### Query String
+#### Query String (or Parameters)
 
-*?author=Darth%20Vader&keyword=Empire*. String made up of query parameters. Used to send data to the server.
+*?author=Darth%20Vader&keyword=fatherhood*. String made up of query parameters. Used to send data to the server.
 
 # Difference between GET and POST
 - GET is the default method of many links;
@@ -79,14 +82,15 @@ http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader&k
 - The response to a GET request can be any kind of resource (image,video, HTML), but if it's HTML and it references other resources, the browser will request those automatically;
 
 ### When to use GET:
-- Retrieving a resource;
+- Retrieving a resource from the server;
 - Sending query strings (exposed in the URL, string size limitation);
+- Using search form (not changing any data on the server);
 - Transmit data through the URL;
 
 ### When to use POST:
 - Send and submit data to the server;
-- Initiate some action on the server;
-- Submitting a form;
+- Initiate some action on the values stored on the server;
+- Submitting a form (except search forms);
 - Sending larger and sensitive data to the server (images/videos);
 - Transmit data through the HTTP body;
 - Redirects to the page specified in the field Location in the response header;
@@ -94,7 +98,11 @@ http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader&k
 
 
 # Difference between client-side and server-side code?
-
+#### Client-side:
+#### Server-side:
+- verify user session
+- load data from database
+- render html (so erb/views is server side?)
 # Which files in a Sinatra project is client-side and which are server-side?
 
 # How does an HTML form element interact with the server-side code that processes it.
