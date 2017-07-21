@@ -105,6 +105,6 @@ Because of the risk of Cross-site scripting, or XSS. It can happen when users ca
 
 A solution to this is to always sanitize user input in the server-side code.
 Other option is to disallow HTML and JavaScript user input.
-If you do need to display code input by the user, a solution would be to always escape user input data when displaying it, so the browser doesn't interpret as code.
+If you do need to display code input by the user, a solution would be to always escape user input data when displaying it (client-side code?), so the browser doesn't interpret as code.
 
 
