@@ -101,5 +101,10 @@ http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader&k
 
 # Why is user-entered content a security risk? Be aware of how to mitigate this risk.
 
-Because of the risk of Cross-site scripting, or XSS. It can happen when users can input text that ends up being displayed directly by the site. The problem is when inputting raw HTML or JavaScript code is allowed and submitting it to the server.
+Because of the risk of Cross-site scripting, or XSS. It can happen when users can input text that ends up being displayed directly by the site. The problem is when inputting raw HTML or JavaScript code is allowed, and submitting it to the server. If the server doesn't do any sanitation of input, the content will be injected into the page and the browser will execute it.
+
+A solution to this is to always sanitize user input in the server-side code.
+Other option is to disallow HTML and JavaScript user input.
+If you do need to display code input by the user, a solution would be to always escape user input data when displaying it, so the browser doesn't interpret as code.
+
 
