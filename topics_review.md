@@ -14,11 +14,11 @@ The server sends an response back to the client also in the form of strings of t
 
 # Components of a HTTP request?
 
-#### Method
+#### Method *REQUIRED*
 
 Tells the server what action to perform on a resource. GET and POST are the most common method types. Keep reading for the differences between them.
 
-#### Path
+#### Path *REQUIRED*
 
 Name of the resource requested. May contain query strings if a GET request.
 
