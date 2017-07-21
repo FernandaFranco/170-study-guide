@@ -49,7 +49,7 @@ Contains raw response data (HTML, photo etc)
 
 # Construct a URL with a few params and values
 
-http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader
+http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader&keyword=Empire
 
 # Components of a URL:
 
@@ -63,7 +63,7 @@ http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader
 
 #### Port
 
-*:69* Required if wanting to use a port other than the default.
+*:69*. Required if wanting to use a port other than the default :80.
 
 #### Path
 
@@ -71,7 +71,7 @@ http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader
 
 #### Query String
 
-*?author=Darth%20Vader*. String made up of query parameters. Used to send data to the server.
+*?author=Darth%20Vader&keyword=Empire*. String made up of query parameters. Used to send data to the server.
 
 # Difference between GET and POST
 - GET is the default method of many links;
@@ -100,4 +100,6 @@ http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader
 # How does an HTML form element interact with the server-side code that processes it.
 
 # Why is user-entered content a security risk? Be aware of how to mitigate this risk.
+
+Because of the risk of Cross-site scripting, or XSS. It can happen when users can input text that ends up being displayed directly by the site. The problem is when inputting raw HTML or JavaScript code is allowed and submitting it to the server.
 
