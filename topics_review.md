@@ -1,6 +1,6 @@
 # What HTTP is
 
-HTTP is a set of rules, or protocol, that regulates the relationship between applications and the transfer of documents. It's an agreement of how machines communicate with each other. It's a text-based protocol that is the foundation of the web. Requests and responses follow a standard format that machines can understand. HTTP is also considered stateless, since each pair of request/responses are independent from the previous one. Thus, the server doesn't need to keep track of information between requests and there's no cleanup needed if a request breaks en route.
+HTTP is a set of rules, or protocol, that regulates the relationship between applications and the transfer of documents. It's an agreement of how machines communicate with each other. It's a text-based, stateless protocol for how clients communicate with servers. It's the foundation of the web. Requests and responses follow a standard format that machines can understand. HTTP is also considered stateless, since each pair of request/responses are independent from the previous one. Thus, the server doesn't need to keep track of information between requests and there's no cleanup needed if a request breaks en route.
 
 # The role of a HTTP request is
 
@@ -48,7 +48,6 @@ Name-value pairs sent in plain text. Allows the server to send additional meta-i
 #### Message Body - *OPTIONAL*
 
 Contains raw response data (HTML, photo etc) the client should render.
-
 
 # Construct a URL with a few params and values
 
