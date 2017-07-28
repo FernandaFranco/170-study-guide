@@ -98,15 +98,34 @@ http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader&k
 
 # Difference between client-side and server-side code?
 #### Client-side:
+
+- render text files to be displayed appropriately to the user
+
 #### Server-side:
 - verify user session
 - load data from database
-- render html (so erb/views is server side?)
+- render html (so erb/views is server side!)
+
 # Which files in a Sinatra project is client-side and which are server-side?
 
+#### Server-side:
+- Gemfile
+Lists dependencies needed to run the program so Bundle can install them.
+- Ruby files
+Core of the Sinatra application. The Ruby code runs on the server while handling requests.
+- View templates
+They must be processed on the server before being sent to the client. The generated response will be then sen to the browser to render.
+
+#### Client-side:
+- Stylesheets
+Interpreted by the browser. Styles the page.
+- JavaScript files
+Evaluated by the JS interpreter whitin every browser. Adds behavior to the page.
 # How does an HTML form element interact with the server-side code that processes it.
 
-name attribute in html is http parameter?
+when a HTML form is submitted by the user, the browser makes a HTTP request to the path specified in the form's action attribute. The name attribute in the input is sent as a HTTP parameter key, and the input value as the parameter value. Also, the method used will be set as the method form's attribute.
+
+The form can generate a get request, in case of search forms/non-destructive actions, or a post request.
 
 # Why is user-entered content a security risk? Be aware of how to mitigate this risk.
 
@@ -120,13 +139,19 @@ If you do need to display code input by the user, a solution would be to always 
 
 # What are the benefits of using view templates? Be able to use an ERB template in a Sinatra route.
 
-Templates are important so we can embed dynamic code into it.
+Templates are files that contain text that is converted into HTML before being sent to a user's browser in a response. They're important so we can embed dynamic values (defined in ruby code) into what's sent to the client, instead of a static file.
 
 # What is the session? Where it is stored? How it is used?
 
 # Write a view helper and use it within a view template.
 
 # Explain how redirection works and why it would be needed in a web application.
+
+routes don't have to return html/photo/static files. It can also send the browser to a different url using redirect. The redirect method sets the url in the Location header. We use redirect when:
+
+- creating/updating some data
+- user stumble into an inexistent page
+
 
 
 
