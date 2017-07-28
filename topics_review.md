@@ -106,6 +106,8 @@ http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader&k
 
 # How does an HTML form element interact with the server-side code that processes it.
 
+name attribute in html is http parameter?
+
 # Why is user-entered content a security risk? Be aware of how to mitigate this risk.
 
 Because of the risk of Cross-site scripting, or XSS. It can happen when users can input text that ends up being displayed directly by the site. The problem is when inputting raw HTML or JavaScript code is allowed, and submitting it to the server. If the server doesn't do any sanitation of input, the content will be injected into the page and the browser will execute it.
@@ -113,5 +115,18 @@ Because of the risk of Cross-site scripting, or XSS. It can happen when users ca
 A solution to this is to always sanitize user input in the server-side code.
 Other option is to disallow HTML and JavaScript user input.
 If you do need to display code input by the user, a solution would be to always escape user input data when displaying it (client-side code?), so the browser doesn't interpret as code.
+
+# Start a new Sinatra project and write simple routes to handle requests.
+
+# What are the benefits of using view templates? Be able to use an ERB template in a Sinatra route.
+
+Templates are important so we can embed dynamic code into it.
+
+# What is the session? Where it is stored? How it is used?
+
+# Write a view helper and use it within a view template.
+
+# Explain how redirection works and why it would be needed in a web application.
+
 
 
