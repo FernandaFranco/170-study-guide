@@ -109,18 +109,13 @@ http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader&k
 # Which files in a Sinatra project is client-side and which are server-side?
 
 #### Server-side:
-- Gemfile
-Lists dependencies needed to run the program so Bundle can install them.
-- Ruby files
-Core of the Sinatra application. The Ruby code runs on the server while handling requests.
-- View templates
-They must be processed on the server before being sent to the client. The generated response will be then sen to the browser to render.
+- Gemfile: Lists dependencies needed to run the program so Bundle can install them.
+- Ruby files: Core of the Sinatra application. The Ruby code runs on the server while handling requests.
+- View templates: They must be processed on the server before being sent to the client. The generated response will be then sen to the browser to render.
 
 #### Client-side:
-- Stylesheets
-Interpreted by the browser. Styles the page.
-- JavaScript files
-Evaluated by the JS interpreter whitin every browser. Adds behavior to the page.
+- Stylesheets: Interpreted by the browser. Styles the page.
+- JavaScript files: Evaluated by the JS interpreter whitin every browser. Adds behavior to the page.
 # How does an HTML form element interact with the server-side code that processes it.
 
 when a HTML form is submitted by the user, the browser makes a HTTP request to the path specified in the form's action attribute. The name attribute in the input is sent as a HTTP parameter key, and the input value as the parameter value. Also, the method used will be set as the method form's attribute.
