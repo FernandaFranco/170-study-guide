@@ -99,12 +99,15 @@ http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader&k
 # Difference between client-side and server-side code?
 #### Client-side:
 
+- Code that is evaluated on the client side
+- Interacts with the user interface
 - render text files to be displayed appropriately to the user
 
 #### Server-side:
-- verify user session
-- load data from database
-- render html (so erb/views is server side!)
+- Code that is evaluated on the server side
+- Verify user session
+- Load data from database
+- Render html (so erb/views is server side!)
 
 # Which files in a Sinatra project is client-side and which are server-side?
 
@@ -139,6 +142,8 @@ Templates are files that contain text that is converted into HTML before being s
 # What is the session? Where it is stored? How it is used?
 
 # Write a view helper and use it within a view template.
+
+ Methods defined within a Sinatra helpers block can be accessed from both views and routes.
 
 # Explain how redirection works and why it would be needed in a web application.
 
