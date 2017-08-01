@@ -107,7 +107,7 @@ http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader&k
 - Code that is evaluated on the server side
 - Verify user session
 - Load data from database
-- Render html (so erb/views is server side!)
+- Generate html code (so erb/views is server side!)
 
 # Which files in a Sinatra project is client-side and which are server-side?
 
@@ -119,11 +119,12 @@ http://www.bookstore.com:69/nonfiction/biographies/search?author=Darth%20Vader&k
 #### Client-side:
 - Stylesheets: Interpreted by the browser. Styles the page.
 - JavaScript files: Evaluated by the JS interpreter whitin every browser. Adds behavior to the page.
+
 # How does an HTML form element interact with the server-side code that processes it.
 
-when a HTML form is submitted by the user, the browser makes a HTTP request to the path specified in the form's action attribute. The name attribute in the input is sent as a HTTP parameter key, and the input value as the parameter value. Also, the method used will be set as the method form's attribute.
+when a HTML form is submitted by the user, the browser makes a HTTP request to the path specified in the form's action attribute. The name attribute in the input tag (or textarea tag) is parsed as a HTTP parameter key, and the input value as the parameter value. Rack provides a hash called params; params["key"] returns the value. Also, the method used will be set as the method form's attribute.
 
-The form can generate a get request, in case of search forms/non-destructive actions, or a post request.
+The form can generate a get request, (e.g. search forms/non-destructive actions), or a post request.
 
 # Why is user-entered content a security risk? Be aware of how to mitigate this risk.
 
@@ -141,9 +142,13 @@ Templates are files that contain text that is converted into HTML before being s
 
 # What is the session? Where it is stored? How it is used?
 
+HTTP is stateless, so to simulate an uninterrupted experience we store data to user sessions. To know which request pertains to what user, we need an session id as a identifier. Sinatra stores session data in a client-side cookie by default, and the entire session data is transferred on each request. This can be modified so the session is stored server side (probably in a database). Both ways, the cookie info is included in the request, and the session id is parsed out by Sinatra.
+
+A cookie is a piece of data that's sent from the server and stored in the client during a request/response cycle.
+
 # Write a view helper and use it within a view template.
 
- Methods defined within a Sinatra helpers block can be accessed from both views and routes.
+If a method is intended to be used as a view helper, then it is best to include it within the helpers block. If the method is something that is used only within routes as a way to separate behavior into logical parts, then it's better to keep it at the top level. Methods defined within a Sinatra helpers block can be accessed from both views and routes.
 
 # Explain how redirection works and why it would be needed in a web application.
 
