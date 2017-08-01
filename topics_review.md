@@ -136,15 +136,19 @@ If you do need to display code input by the user, a solution would be to always 
 
 # Start a new Sinatra project and write simple routes to handle requests.
 
+#### Steps to start a Sinatra project:
+
+#### Example code with request routes:
+
 # What are the benefits of using view templates? Be able to use an ERB template in a Sinatra route.
 
 Templates are files that contain text that is converted into HTML before being sent to a user's browser in a response. They're important so we can embed dynamic values (defined in ruby code) into what's sent to the client, instead of a static file.
 
 # What is the session? Where it is stored? How it is used?
 
-HTTP is stateless, so to simulate an uninterrupted experience we store data to user sessions. To know which request pertains to what user, we need an session id as a identifier. Sinatra stores session data in a client-side cookie by default, and the entire session data is transferred on each request. This can be modified so the session is stored server side (probably in a database). Both ways, the cookie info is included in the request, and the session id is parsed out by Sinatra.
+HTTP is stateless, so to simulate an uninterrupted experience we store data to user sessions. To know which request pertains to what user, we need an session id as a identifier. The session data is generated and stored on the server-side and the session id is sent to the client in the form of a cookie. Sinatra stores session data in a client-side cookie too by default, and the entire session data is transferred on each request. This can be modified so the session is stored only server-side (probably in a database). Both ways, the cookie info is included in the request, and the session id is parsed out by Sinatra. The id sent with a session is unique and expires in a short time.
 
-A cookie is a piece of data that's sent from the server and stored in the client during a request/response cycle.
+A cookie is a piece of data that's sent from the server and stored in the client during a request/response cycle. Every new request a user makes to the server will contain the cookie info in the request header.
 
 # Write a view helper and use it within a view template.
 
