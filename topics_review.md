@@ -128,9 +128,16 @@ The form can generate a get request, (e.g. search forms/non-destructive actions)
 
 # Why is user-entered content a security risk? Be aware of how to mitigate this risk.
 
-Because of the risk of Cross-site scripting, or XSS. It can happen when users can input text that ends up being displayed directly by the site. The problem is when inputting raw HTML or JavaScript code is allowed, and submitting it to the server. If the server doesn't do any sanitation of input, the content will be injected into the page and the browser will execute it.
+Because webpages are building HTML dynamically and that means that there are lots of opportunities for someone to influence what code is written into the page. And if they are able to modify the code in the page, they have all the access they need to steal data or, potentially, credentials.
 
-A solution to this is to always sanitize user input in the server-side code.
+User-entered content creates the risk of Cross-site scripting, or XSS. It can happen when users can input text that ends up being displayed directly by the site. The problem is when inputting raw HTML or JavaScript code is allowed, and submitting it to the server. If the server doesn't do any sanitation of input, the content will be injected into the page and the browser will execute it.
+
+A solution to this is to always sanitize user input in the server-side code. The way of doing this is escaping certain values so the browser won't interpret it as HTML code.
+
+Rack provides a method called Rack::Utils.escape_html so we can manually escape every user-input values, but a more thorough approach is enabling Sinatra to automatically escape every output.
+
+With that enabled, we need to avoid escaping code that is actually supposed to be interpreted by replacing <%= with <%== in our layout view template.
+
 Other option is to disallow HTML and JavaScript user input.
 If you do need to display code input by the user, a solution would be to always escape user input data when displaying it (client-side code?), so the browser doesn't interpret as code.
 
